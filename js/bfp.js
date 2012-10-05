@@ -38,7 +38,7 @@ bfp.calcBFP = function(neck, abdomen, height) {
 }
 
 Math.log10 = function(n) {
-    return (Math.log(n)) / (Math.log(10));
+    return (Math.log(n)) / Math.LN10;
 }
 
 $(document).ready(function() {
@@ -84,9 +84,14 @@ $(document).ready(function() {
     });
 	
 	$.indexedDB("bfp", {
-				"schema" : {"3": function(tr) { var bf = tr.createObjectStore("bfp", {"keyPath": "id", "autoIncrement": true}) } } 
-				}); 
+		"schema" : { "3": function(tr) { 
+							var bf = tr.createObjectStore("bfp", {"keyPath": "id", "autoIncrement": true}) 
+						} 
+					} 
+	}); 
 				
 	bfp.display();
-    $('#calc').calculator().dialog();
+    $('#calc')
+		.calculator()
+		.dialog({height:200,width:250,resizable:false,position:[400,10]});
 });

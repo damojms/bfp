@@ -10,5 +10,5 @@
 		.ui-dialog .ui-state-error { padding: .3em; }
 		.validateTips { border: 1px solid transparent; padding: 0.3em; }
 		#FilterEmail { width: 300px; }
-		#calc { float: right; }
+		#calc { float: left; }
 		
