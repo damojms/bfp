@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Body Fat Calculator</title>
+<script src="js/jquery-1.8.2.min.js"></script>
+<script src="js/jquery.indexeddb.js"></script>
+<script src="js/jquery-ui-1.8.24.custom.min.js"></script>
+<script src="js/jquery-ui-calculator.js"></script>
+
+<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.8.24.custom.css" />
+<link rel="stylesheet" href="css/page.css" />
+<link rel="stylesheet" href="css/calc.css" />
+<script src="js/bfp.js"></script>
+</head>
+<body>
+	<div id="content">
+		<div id="operations">
+			<button id="ClearDB">Clear Previous</button>
+			<button id="ShowAdd">New Entry</button>
+		</div>
+		<div id="dialog-form" title="Add New Entry">
+			<form method="post" id="CalcVars">
+				<div>
+					<label for ="1">Height</label>
+					<input type="number" min="1" value="173" id="height" name="height" size="2" step="1" 
+					 class="text ui-widget-content ui-corner-all" />
+				</div>
+				<div>
+					<label for ="2">Neck</label>
+					<input type="number" min="1" value="39" id="neck" name="neck" size="2" step="1" 
+					 class="text ui-widget-content ui-corner-all"/>
+				</div>
+				<div>
+					<label for ="3">Abdomen</label>
+					<input type="number" min="1" value="90" id="abdomen" name="abdomen" size="2" step="1"
+					 class="text ui-widget-content ui-corner-all" />
+				</div>
+				<div>
+					<input type="email" id="email" placeholder="Enter your email address" size="40"
+					 class="text ui-widget-content ui-corner-all"/>
+				</div>
+				<div>
+					<button id="Calculate">Calculate</button>
+					<button id="Add">Add</button>
+				</div>
+			</form>
+		</div>
+		<div id="calc" title="Calculator"></div>
+		<div>
+			<h2>Filter by Email</h2>
+			<form id="FilterForm">
+				<input type="email" placeholder="Filter scores by email" size="40" id="FilterEmail" 
+				class="text ui-widget-content ui-corner-all" /><br />
+				<button id="Filter">Filter</button>
+			</form>
+		</div>
+		<h2>Previous Results</h2>
+		<div id="storedResults"></div>
+	</div>
+</body>
+
+</html>
